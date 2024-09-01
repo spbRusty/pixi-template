@@ -1,8 +1,12 @@
 import { Game } from "./Game";
-import { Tools } from "../system/Tools";
 
 export const Config = {
-    loader: Tools.massiveRequire(require["context"]('./../../sprites/', true, /\.(mp3|png|jpe?g)$/)),
+    loader: [
+        { key: "player", data: "path/to/player.png" },
+        { key: "obstacle", data: "path/to/obstacle.png" },
+        { key: "background", data: "path/to/background.png" }
+    ],
+    startScene: Game,
     scenes: {
         "Game": Game
     }
